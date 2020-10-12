@@ -1,0 +1,644 @@
+@import "vars";
+@import "libs";
+@import "fonts";
+@import "global";
+
+.header{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 30px;
+    z-index: 100;
+
+    &__inner{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 30px;
+        text-transform: uppercase;
+        font-size: 15px;
+        line-height: 17px;
+        @extend %ubuntu-medium !optional;
+    }
+
+    &__btn{
+        color: #fff;
+        background-color: transparent;
+        padding: 6px 28px;
+        border: 1px solid #fff;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        -o-border-radius: 3px;
+        margin-right: 8px;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all .5s;
+        -webkit-transition: all .5s;
+        -moz-transition: all .5s;
+        -ms-transition: all .5s;
+        -o-transition: all .5s;
+
+        &:hover{
+        color: #1C1C1C;
+        background-color: #fff;
+        }
+    }
+
+    &__phone{
+        font-size: 16px;
+        line-height: 18px;
+        @extend %ubuntu-bold !optional;
+    }
+}
+
+.menu{
+   &__list-item{
+       display: inline-block;
+
+       &.active a{
+           text-decoration: underline;
+       }
+      
+       & + &{
+           padding-left:20px;
+       }
+   } 
+   &__btn{
+       display: none;
+   }
+   
+   &__list-phone{
+       display: none;
+   }
+}
+
+.intro{
+    background: url('../images/intro-bg.jpg');
+    background-size: cover;
+
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: radial-gradient(45.97% 54.43% at 50% 45.57%, rgba(23, 26, 28, 0) 50.28%, rgba(23,26,28, .00225974) 50.29%, rgba(4,5,5,0.820343) 58.72%, rgba(5,5,6,.792703) 80.08%, #000 87.89%);
+        opacity: .4;
+    }
+
+    &__wrapper{
+        display: flex;
+        align-items: center;
+        height: calc(100vh - 124px);
+    }
+
+    &__inner{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    &__title{
+        font-size: 96px;
+        line-height: 115px;
+        @extend %sf-semibold !optional;
+        margin-bottom: 25px;
+    }
+
+    &__text{
+        margin: 25px 0 35px;
+        max-width: 325px;
+    }
+    
+    &__social-item{
+        display: inline-block;
+    }
+    &__social-link{
+        opacity: .5;
+        transition: all .5s;
+        -webkit-transition: all .5s;
+        -moz-transition: all .5s;
+        -ms-transition: all .5s;
+        -o-transition: all .5s;
+        
+        &:hover{
+            opacity: 1;
+        }
+    }
+
+    &__social-item + &__social-item{
+        margin-left: 40px;
+    }
+}
+.product{
+    &__inner{
+        display: flex;
+        justify-content: space-between;
+        padding-left: 50px;
+    }
+
+    &__text{
+        max-width: 440px;
+
+        p + p{
+            margin-top: 30px;
+        }
+
+        p {
+            margin-right: 30px;
+        }
+    }
+    &__slider-box{
+        align-self: flex-end;
+        position: relative;
+        padding-right: 45px;
+        padding-bottom: 50px;
+    }
+
+    &__slider-text{
+        width: 282px;
+        position: absolute;
+        text-align: right;
+        font-size: 24px;
+        line-height: 28px;
+        @extend %ubuntu-medium !optional;
+        bottom: 80px;
+        left: -107px;
+        z-index: 5;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+}
+    &__slider{
+        max-width: 560px;
+        width: 100%;
+        height:auto;
+
+        img{
+            width: 100%;
+        }
+
+        &::before{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 4px solid #fff;
+            top: -15px;
+            right: -17px;
+        }
+    }
+    .slider-btn {
+        padding: 16px 26px;
+        border: none;
+        background-color: #fff;
+        position: absolute;
+        bottom: -48px;
+        right: 0;
+        cursor: pointer;
+        z-index: 5;
+        outline: none;
+
+        &__left{
+            right: 60px;
+        }
+
+        & path{
+            stroke: #000;
+        }
+    }
+    .slick-disabled{
+        background-color: #1c1c1c;
+
+        & path{
+            stroke: #fff;
+        }
+    }
+}
+.benefits{
+    &__items{
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 25px;
+        padding-top: 25px;
+    }
+
+    &__item{
+        display: flex;
+        align-items: flex-end;
+        position: relative;
+        
+        &::before{
+            content: '';
+            position: absolute;
+        }
+
+        &:nth-child(even){
+            margin-top: 15px;
+        }
+    }
+
+    &__item-1{
+        margin-bottom: 80px;
+       
+        &::before{
+            width: 245px;
+            height: 45.05px;
+            background: url(../images/line-1.svg) 0 0 no-repeat;
+            background-size: contain;
+            right: -54px;
+            top: 39px;
+        }
+    }
+
+    &__item-2{
+        margin-left: 25px;
+        margin-bottom: 65px;
+       
+        &::before{
+            width: 463px;
+            height: 62.5px;
+            background: url(../images/line-2.svg) 0 0 no-repeat;
+            background-size: contain;
+            left: -450px;
+            bottom: -64px;
+        }
+    }
+    &__item-3{
+        margin-left: 25px;
+       
+        &::before{
+            width: 254px;
+            height: 39px;
+            background: url(../images/line-3.svg) 0 0 no-repeat;
+            background-size: contain;
+            right: -71px;
+            top: 50px;
+        }
+    }
+    &__item-4{
+        margin-left: 35px;
+    }
+
+    &__num{
+        font-size: 36px;
+        line-height: 41px;
+        @extend %ubuntu-bold !optional;
+        margin-right: 10px;
+    }
+
+    &__img{
+        position: relative;
+        margin-right: 32px;
+
+        &::before{
+            content:'';
+            position: absolute;
+            width: calc(100% - 4px);
+            height: calc(100% - 4px);
+            top: -12px;
+            right: -12px;
+            border:2px solid #fff;
+            z-index: -1;
+        }
+    }
+
+    &__info{
+        width: 300px;
+    }
+    &__info-title{
+        width: 123px;
+        font-size: 21px;
+        line-height: 24px;
+        @extend %ubuntu-bold !optional;
+        margin-bottom: 10px;
+    }
+
+    &__info-text{
+        font-size: 15px;
+        line-height: 18px;
+    }
+}
+.specification{
+    &__inner{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 50px;
+    }
+
+    &__item:nth-child(2){
+        margin-left: -45px;
+        margin-right: -25px;
+    }
+
+    &__item-wrapper{
+        width: 280px;
+        position: relative;
+        margin-top: 10px;
+
+        &::before{
+            content: '';
+            position: absolute;
+        }
+    }
+    &__item-wrapper-2{
+        margin-top: 140px;
+    }
+    &__item-wrapper-4{
+        margin-top: 160px;
+    }
+    &__item-wrapper-1::before{
+        background: url('../images/pointer-1.png') 0 0 no-repeat;
+        background-size: contain;
+        width: 229px;
+        height: 114px; 
+        top: 15px;
+        right: -130px;
+    }
+    &__item-wrapper-2::before{
+        background: url('../images/pointer-2.png') 0 0 no-repeat;
+        background-size: contain;
+        width: 346px;
+        height: 80.97px;
+        top: -62px;
+        right: -267px;
+    }
+    &__item-wrapper-3::before{
+        background: url('../images/pointer-3.png') 0 0 no-repeat;
+        background-size: contain;
+        width: 258px;
+        height: 102.67px;
+        top: 14px;
+        left: -258px;
+    }
+    &__item-wrapper-4::before{
+        background: url('../images/pointer-4.png') 0 0 no-repeat;
+        background-size: contain;
+        width: 123.5px;
+        height: 89px;
+        top: -69px;
+        left: -122px;
+    }
+
+    &__item-title{
+        font-size: 21px;
+        line-height: 28px;
+        @extend %ubuntu-bold !optional;
+        margin-bottom: 10px;
+    }
+
+    &__item-text{
+        font-size: 15px;
+        line-height: 18px;
+    }
+}
+.questions{
+    &__accordion{
+        max-width: 690px;
+        padding-left: 25px;
+    }
+
+    &__accordion-item{
+        background-color: rgba(0, 0, 0, 0.3);
+        opacity: 0.95;
+
+        &:nth-child(3){
+            position: relative;
+            
+            &::before{
+                content:'';
+                position: absolute;
+                width: 319px;
+                height: 125px;
+                background: url('../images/mavic-small.png');
+                top: -32px;
+                right: -72px;
+                transform: translateX(100%);
+                -webkit-transform: translateX(100%);
+                -moz-transform: translateX(100%);
+                -ms-transform: translateX(100%);
+                -o-transform: translateX(100%);
+                transition: all .5s;
+                -webkit-transition: all .5s;
+                -moz-transition: all .5s;
+                -ms-transition: all .5s;
+                -o-transition: all .5s;
+            }
+        }
+    }
+
+    &__accordion-item + &__accordion-item{
+        margin-top: 5px;
+    }
+
+    &__accordion-title {
+        font-size: 21px;
+        line-height: 28px;
+        @extend %ubuntu-medium;
+        color: rgba(#fff, 0.8);
+        padding: 20px 72px 24px 40px;
+        position: relative;
+        cursor: pointer;
+
+        &::after {
+            position: absolute;
+            content: "";
+            width: 72px;
+            height: 67px;
+            background-color: #fff;
+            right: -72px;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+   
+        &::before {
+            position: absolute;
+            content: url("../images/vector.svg");
+            right: -45px;
+            z-index: 5;
+            transition: all .5s;
+            -webkit-transition: all .5s;
+            -moz-transition: all .5s;
+            -ms-transition: all .5s;
+            -o-transition: all .5s;
+}
+
+        &.active::before{
+            transform: rotate(180deg);
+        }
+    }
+
+    &__accordion-text{
+        padding: 0 20px 40px 50px;
+        display: none;
+    }
+
+}
+.contacts{
+    &__inner{
+       margin-left: 55px;
+       display: flex;
+    }
+
+    &__info{
+        max-width: 260px;
+
+        &-box + &-box{
+           margin-top: 30px;
+        }
+
+        &-title{
+            @extend %ubuntu-bold;
+            font-size: 21px;
+            line-height: 24px;
+        }
+
+        &-phone, &-email{
+            display: block;
+            margin-top: 13px;
+            font-size: 15px;
+            line-height: 18px;
+            @extend %ubuntu-light;
+        }
+
+        &-phone:hover, &-email:hover{
+            text-decoration: underline;
+        }
+        &-phone{
+            margin-top: 13px;
+        }
+        &-email{
+            margin-top: 5px;
+        }
+    }
+
+    &__form{
+        margin-left: 60px;
+        max-width: 570px;
+
+        &-title{
+            @extend %ubuntu-bold;
+            font-size: 21px;
+            line-height: 24px;
+        }
+
+        &-text{
+            margin-top: 13px;
+            font-size: 15px;
+            line-height: 18px;
+            @extend %ubuntu-light;
+        }
+
+        &-line{
+            margin-top: 12px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(100px, 1fr));;
+            grid-column-gap: 10px;
+        }
+
+        & input, & textarea{
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0.95;
+            border: none;
+            padding: 15px;
+            color:#fff;
+            font-size: 13px;
+            line-height: 17px;
+            @extend %ubuntu-normal;
+        }
+
+        & textarea{
+            margin-top: 10px;
+            width: 100%;
+            height: 144px;
+            resize: none; 
+        }
+
+        & ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color:#fff;
+            opacity: .4;
+             /* Firefox */
+        }
+        
+        & :-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color:#fff;
+            opacity: .4;
+            
+        }
+        
+        & ::-ms-input-placeholder { /* Microsoft Edge */
+            color:#fff;
+            opacity: .4;
+            
+        }
+
+        &-btn{
+            @extend %ubuntu-bold;
+            font-size: 14px;
+            line-height: 16px;
+            letter-spacing: 0.03em;
+            color: #fff;
+            border-radius: 2px;
+            border: 1px solid #fff;
+            background-color: transparent;
+            padding: 9px 15px;
+            text-transform: uppercase;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: all .5s;
+            -webkit-transition: all .5s;
+            -moz-transition: all .5s;
+            -ms-transition: all .5s;
+            -o-transition: all .5s;
+            
+            &:hover{
+                color: #1c1c1c;
+                background-color: #fff;
+            }
+        }
+    } 
+
+    &__social-list{
+        margin-left: 106px;
+        margin-top: 80px;
+        
+        li{
+            opacity: .5;
+            transition: all .5s;
+            -webkit-transition: all .5s;
+            -moz-transition: all .5s;
+            -ms-transition: all .5s;
+            -o-transition: all .5s;
+
+            &:hover{
+                opacity: 1;
+            }
+        }
+
+        li+li{
+            margin-top: 24px;
+        }
+
+        
+    }
+}
+footer{
+    @extend %ubuntu-light;
+    font-size: 13px;
+    line-height: 17px;
+    opacity: 0.64;
+    text-align: right;
+}
+
+
+
+@import "media";

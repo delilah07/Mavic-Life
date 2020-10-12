@@ -1,0 +1,95 @@
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit
+}
+
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    font-size: inherit;
+}
+
+body {
+    min-width: 320px;
+    overflow-x: hidden;
+    position: relative;
+    color: #fff;
+    @extend %ubuntu-light !optional;
+    font-size: 17px;
+    line-height: 26px;
+}
+
+.container{
+    max-width: 1230px;
+    padding: 0 15px;
+    margin: 0 auto;
+
+    & > .page__inner{
+        height: calc(100vh - 260px);
+    }
+}
+.page-section {
+    height: 100vh;
+    background: url('../images/page-bg.jpg') center no-repeat;
+    background-size: cover;
+    position: relative;
+
+    &__wrapper{
+        min-height: 100vh;
+        z-index: 1;
+        position: relative;
+        padding: 74px 0 50px;
+    }
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(107.54deg, rgba(23, 26, 28, 0.72) 0%, #5E5E57 100%);
+        opacity: .15;
+    }
+}
+
+.title {
+    @extend %sf-regular !optional;
+    font-size: 44px;
+    line-height: 53px;
+    padding-left: 25px;
+    margin-bottom: 35px;
+    padding-top: 3%;
+}
+
+.scroll__btn {
+    padding: 13px 0 30px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
